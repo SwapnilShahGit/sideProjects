@@ -1,0 +1,4 @@
+hello/Application.class
+hello/HomeController.class
+hello/WebSecurityConfig.class
+hello/WebSecurityConfig$AuthenticationConfiguration.class
