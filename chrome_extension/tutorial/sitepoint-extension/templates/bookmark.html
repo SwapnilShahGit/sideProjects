@@ -1,0 +1,40 @@
+<div class="bookmark">
+  <!-- We are using the interpolation template syntax 
+  to bind the component properties "bookmark.name" 
+  and "bookmark.url" to our template. -->
+  <a href="{{bookmark.url}}" class="bookmark__link">{{bookmark.name}}</a>
+  <!-- Every bookmark has two buttons, to let users edit and delete a bookmark.-->
+  <span class="bookmark__button-wrapper">
+    <!-- The edit button has an event binding "(click)", 
+    which sets the component variable "submitted" to true. 
+    It also has a property binding "[hidden]",
+    which hides the button, when the variable "submitted" is true. -->
+    <button class="bookmark__button" (click)="submitted=true" [hidden]="submitted">
+      Edit
+    </button>
+    <!-- The delete button uses an event binding "(click)", 
+    that calls the component function "onDelete()", 
+    when a user clicks it. -->
+    <button class="bookmark__button" (click)="onDelete(bookmark)">Delete</button>
+  </span>
+  <!-- To edit a bookmark, we show a form 
+  if the value of the property "submitted" is false. -->
+  <div class="bookmark__form-wrapper" [hidden]="!submitted">
+    <!-- The form has a submit button, 
+    which allows us to use the Angular directive "ngSubmit".
+    It calls another component function "onSubmit()". -->
+    <form class="bookmark__form" (ngSubmit)="onSubmit()">
+      <label class="bookmark__form__label">Name: </label>
+      <!-- There are two input fields for the two properties 
+      "bookmark.name" and "bookmark.url". 
+      Both use the two-way data binding template syntax, 
+      to change the property values. -->
+      <input class="bookmark__form__input" [(ngModel)]="bookmark.name" 
+        placeholder="Name"/>
+      <label class="bookmark__form__label">URL: </label>
+      <input class="bookmark__form__input" [(ngModel)]="bookmark.url" 
+        placeholder="URL"/>
+      <button class="bookmark__form__button" type="submit">Done</button>
+    </form>
+  </div>
+</div>

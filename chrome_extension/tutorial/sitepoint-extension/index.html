@@ -1,0 +1,28 @@
+html>
+  <head>
+
+    <title>SitePoint Bookmark Extension</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- We load the libraries we need directly from the "node_modules" folder.
+    In a more complex project, we would use a different approach here, 
+    e.g. working with a build tool like gulp.js or Angular-CLI. -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- Load the SystemJS config -->
+    <script src="scripts/system.config.js"></script>
+
+  </head>
+
+  <body>
+    <!-- Here we are using the selector "sp-bookmark", 
+    which we defined as component meta data in the "BookmarkComponent" decorator. 
+    Everything inside the element tag will only be seen 
+    until our application is loaded. -->
+    <sp-bookmark>Loading bookmarks...</sp-bookmark>
+  </body>
+
+</html>

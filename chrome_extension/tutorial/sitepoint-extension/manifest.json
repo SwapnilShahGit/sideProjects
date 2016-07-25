@@ -1,0 +1,8 @@
+{
+    "manifest_version": 2,
+    "name": "SitePoint Bookmark Extension",
+    "short_name": "Make the most of a new tab",
+    "description": "This extension helps you save your favorite webpages.",
+    "version": "1.0.0",
+    "author": "Michaela Lehr @fischaelameer"
+}
